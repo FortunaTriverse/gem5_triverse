@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/416.gamess/run/run_base_ref_riscv.0000
+ echo "gamess cytosine..."
+/home/gem5/m5 checkpoint
+ ./gamess_base.riscv < cytosine.2.config
+  echo "gamess done"
+/home/gem5/m5 exit
+

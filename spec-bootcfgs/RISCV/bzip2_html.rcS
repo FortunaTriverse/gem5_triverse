@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/home/gem5/m5 checkpoint
+
+cd /home/gem5/spec06/benchspec/CPU2006/401.bzip2/run/run_base_ref_riscv.0000
+echo "bzip2 chiecken..."
+./bzip2_base.riscv text.html 280
+echo "bzip2 done"
+/home/gem5/m5 exit
+

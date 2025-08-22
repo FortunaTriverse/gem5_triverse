@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/sbin/m5 checkpoint
+
+cd /home/gem5/SPEC/benchspec/CPU2006/444.namd/run/run_base_ref_amd64-m64-gcc42-nn.0000
+echo "namd..."
+./namd_base.amd64-m64-gcc42-nn  --input namd.input --iterations 38 --output namd.out
+echo "namd done"
+/sbin/m5 exit
+

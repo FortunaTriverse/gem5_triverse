@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/445.gobmk/run/run_base_ref_riscv.0000
+ echo "gobmk..."
+ /home/gem5/m5 checkpoint
+ ./gobmk_base.riscv --quiet --mode gtp < score2.tst
+  echo "gobmk done"
+/home/gem5/m5 exit
+

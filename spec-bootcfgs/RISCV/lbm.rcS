@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/home/gem5 /m5 checkpoint
+
+cd /home/gem5/spec06/benchspec/CPU2006/470.lbm/run/run_base_ref_riscv.0000
+echo "Lbm..."
+./lbm_base.riscv 3000 reference.dat 0 0 100_100_130_ldc.of
+echo "Lbm done"
+/home/gem5 /m5 exit
+

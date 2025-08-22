@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/home/gem5/m5 checkpoint
+
+cd /home/gem5/spec06/benchspec/CPU2006/459.GemsFDTD/run/run_base_ref_riscv.0000
+
+echo "GemsFDTD..."
+./GemsFDTD_base.riscv 
+echo "GemsFDTD done"
+/home/gem5/m5 exit
+

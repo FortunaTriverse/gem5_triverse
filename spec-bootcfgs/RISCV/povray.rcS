@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/home/gem5/m5 checkpoint
+
+cd /home/gem5/spec06/benchspec/CPU2006/453.povray/run/run_base_ref_riscv.0000
+echo "povray..."
+./povray_base.riscv SPEC-benchmark-ref.ini
+echo "povray done"
+/home/gem5/m5 exit
+

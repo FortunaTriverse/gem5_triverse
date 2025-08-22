@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/SPEC/benchspec/CPU2006/401.bzip2/run/run_base_ref_amd64-m64-gcc42-nn.0000
+ echo "Bzip2 liberty..."
+ /sbin/m5 checkpoint
+ ./bzip2_base.amd64-m64-gcc42-nn liberty.jpg 30
+  echo "Bzip2 done"
+/sbin/m5 exit
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/403.gcc/run/run_base_ref_riscv.0000
+ echo "Gcc ctype..."
+ /home/gem5/m5 checkpoint
+ ./gcc_base.riscv c-typeck.in -o c-typeck.s
+  echo "Gcc done"
+/home/gem5/m5 exit
+

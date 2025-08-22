@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/454.calculix/run/run_base_ref_riscv.0000
+ echo "calculix..."
+ /home/gem5/m5 checkpoint
+ cd /home/gem5/spec06/benchspec/CPU2006/454.calculix/run/run_base_ref_riscv.0000 && ./calculix_base.riscv -i hyperviscoplastic
+  echo "calculix done"
+/home/gem5/m5 exit
+

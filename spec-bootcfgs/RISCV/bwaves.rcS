@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/home/gem5/m5 checkpoint
+
+cd /home/gem5/spec06/benchspec/CPU2006/410.bwaves/run/run_base_ref_riscv.0000
+echo "bwaves..."
+./bwaves_base.riscv
+echo "bwaves done"
+/home/gem5/m5 exit
+

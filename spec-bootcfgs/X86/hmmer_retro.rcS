@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/SPEC/benchspec/CPU2006/456.hmmer/run/run_base_ref_amd64-m64-gcc42-nn.0000
+ echo "hmmer..."
+ /sbin/m5 checkpoint
+ ./hmmer_base.amd64-m64-gcc42-nn --fixed 0 --mean 500 --num 500000 --sd 350 --seed 0 retro.hmm
+  echo "hmmer done"
+/sbin/m5 exit
+

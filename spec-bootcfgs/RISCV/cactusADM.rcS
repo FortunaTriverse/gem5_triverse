@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/436.cactusADM/run/run_base_ref_riscv.0000
+ echo "cactusADM..."
+ /home/gem5/m5 checkpoint
+ ./cactusADM_base.riscv benchADM.par
+  echo "cactusADM done"
+/home/gem5/m5 exit
+

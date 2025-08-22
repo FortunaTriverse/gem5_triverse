@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/home/gem5/m5 checkpoint
+
+cd /home/gem5/spec06/benchspec/CPU2006/433.milc/run/run_base_ref_riscv.0000
+echo "milc..."
+./milc_base.riscv < su3imp.in 
+echo "milc done"
+/home/gem5/m5 exit
+

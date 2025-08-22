@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/sbin/m5 checkpoint
+
+cd /home/gem5/SPEC/benchspec/CPU2006/434.zeusmp/run/run_base_ref_amd64-m64-gcc42-nn.0000
+echo "zeusmp..."
+./zeusmp_base.amd64-m64-gcc42-nn
+echo "zeusmp done"
+/sbin/m5 exit
+

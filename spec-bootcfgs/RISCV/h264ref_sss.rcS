@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/464.h264ref/run/run_base_ref_riscv.0000
+ echo "h264ref sss..."
+ /home/gem5/m5 checkpoint
+ ./h264ref_base.riscv -d sss_encoder_main.cfg
+  echo "h264ref done"
+/home/gem5/m5 exit
+

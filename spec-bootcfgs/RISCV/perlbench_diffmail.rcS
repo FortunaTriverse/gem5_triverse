@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/400.perlbench/run/run_base_ref_riscv.0000
+ echo "Perlbench diffmail..."
+ /home/gem5/m5 checkpoint
+ ./perlbench_base.riscv -I./lib diffmail.pl 4 800 10 17 19 300
+  echo "Perlbench done"
+/home/gem5/m5 exit
+

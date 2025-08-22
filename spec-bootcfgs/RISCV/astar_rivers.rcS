@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /home/gem5/spec06/benchspec/CPU2006/473.astar/run/run_base_ref_riscv.0000
+ echo "Astar Rivers..."
+ /home/gem5/m5 checkpoint
+ ./astar_base.riscv rivers.cfg
+  ./astar_base.riscv rivers.cfg
+  echo "Astar done"
+  /home/gem5/m5 exit
+/home/gem5/m5 exit
+

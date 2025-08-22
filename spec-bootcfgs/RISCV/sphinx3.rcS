@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ cd /home/gem5/spec06/benchspec/CPU2006/482.sphinx3/run/run_base_ref_riscv.0000/
+ echo "Sphinx..."
+  /home/gem5 /m5 checkpoint
+ ./sphinx_livepretend_base.riscv ctlfile . args.an4
+  echo "Sphinx done"
+  /home/gem5 /m5 exit
+

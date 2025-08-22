@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+ cd /root/spec06/benchspec/CPU2006/403.gcc/run/run_base_ref_riscv.0000
+ echo "Gcc 166..."
+ /root/m5 checkpoint
+ ./gcc_base.riscv 166.in -o 166.s
+  echo "Gcc done"
+/root/m5 exit
+

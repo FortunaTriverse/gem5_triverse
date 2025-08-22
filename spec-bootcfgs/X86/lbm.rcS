@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/sbin/m5 checkpoint
+
+cd /home/gem5/SPEC/benchspec/CPU2006/470.lbm/run/run_base_ref_amd64-m64-gcc42-nn.0000
+echo "Lbm..."
+./lbm_base.amd64-m64-gcc42-nn 3000 reference.dat 0 0 100_100_130_ldc.of
+echo "Lbm done"
+/sbin/m5 exit
+

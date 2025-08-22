@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Checkpoint the first execution
+echo "Checkpointing simulation..."
+/sbin/m5 checkpoint
+
+cd /home/gem5/SPEC/benchspec/CPU2006/458.sjeng/run/run_base_ref_amd64-m64-gcc42-nn.0000
+echo "sjeng..."
+./sjeng_base.amd64-m64-gcc42-nn ref.txt 
+echo "sjeng done"
+/sbin/m5 exit
+
